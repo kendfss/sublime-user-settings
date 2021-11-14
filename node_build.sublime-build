@@ -1,0 +1,12 @@
+{
+    "shell_cmd": "wt -w 0 node -i \"$file\"",
+    "shell": true,
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.javascript",
+    "variants": [
+        {
+            "name": "Syntax Check",
+            "shell_cmd": "node -c \"${file}\"",
+        }
+    ]
+}

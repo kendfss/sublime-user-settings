@@ -1,0 +1,64 @@
+[
+	{ "keys": ["ctrl+b", "ctrl+k"], "command": "show_build_results" },
+    { "keys": ["f8"], "command": "toggle_side_bar" },
+    { "keys": ["alt+p"], "command": "copy_path" },
+    { "keys": ["alt+d"], "command": "copy_directory_path" },
+    { "keys": ["alt+q"], "command": "copy_path_quoted" },
+    { "keys": ["alt+r"], "command": "rename_file" },
+    
+    { "keys": ["super+alt+n"], "command": "save_new_version", "args": {"enter": true} },
+    { "keys": ["super+alt+s"], "command": "save_new_version", "args": {"enter": false} },
+    { "keys": ["super+d"], "command": "duplicate_line_below" },
+
+    { "keys": ["super+k", "super+0"], "command": "faves"},
+    { "keys": ["super+shift+0"], "command": "faves", "args": { "text": "0" } },
+    { "keys": ["super+shift+1"], "command": "faves", "args": { "text": "1" } },
+    { "keys": ["super+shift+2"], "command": "faves", "args": { "text": "2" } },
+    { "keys": ["super+shift+3"], "command": "faves", "args": { "text": "3" } },
+    { "keys": ["super+shift+4"], "command": "faves", "args": { "text": "4" } },
+    { "keys": ["super+shift+5"], "command": "faves", "args": { "text": "5" } },
+    { "keys": ["super+shift+6"], "command": "faves", "args": { "text": "6" } },
+    { "keys": ["super+shift+7"], "command": "faves", "args": { "text": "7" } },
+    { "keys": ["super+shift+8"], "command": "faves", "args": { "text": "8" } },
+    { "keys": ["super+shift+9"], "command": "faves", "args": { "text": "9" } },
+
+    { "keys": ["super+,"], "command": "open_file", "args": { "file": "/Users/kendfss/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings" } },
+    { "keys": ["super+alt+,"], "command": "open_file", "args": { "file": "/Users/kendfss/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap" } },
+    { "keys": ["super+shift+,"], "command": "open_file", "args": { "file": "/Users/kendfss/Library/Application Support/Sublime Text/Packages/Default/Default (OSX).sublime-keymap" } },
+
+    { "keys": ["super+k", "super+a"], "command": "increment_selection", "args": { "boost": "1" } },
+    { "keys": ["super+k", "super+s"], "command": "increment_selection", "args": { "boost": "-1" } },
+    
+    { "keys": ["alt+x"], "command": "toggle_tabs" },
+    { "keys": ["super+shift+delete"], "command": "left_delete"},
+    { "keys": ["super+k", "super+z"], "command": "roll_selection", "args": { "boost": -1, "parallel": false } },
+    { "keys": ["super+k", "super+x"], "command": "roll_selection", "args": { "boost": 1, "parallel": false } },
+    { "keys": ["super+k", "super+q"], "command": "roll_selection", "args": { "boost": -1, "parallel": true } },
+    { "keys": ["super+k", "super+w"], "command": "roll_selection", "args": { "boost": 1, "parallel": true } },
+    
+    { "keys": ["alt+enter"], "command": "find_all", "args": {"close_panel": true},
+         "context": [{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
+    },
+    { "keys": ["alt+enter"], "command": "find_all", "args": {"close_panel": true},
+        "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+    },
+    { "keys": ["ctrl+alt+enter"], "command": "replace_all", "args": {"close_panel": true},
+         "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+    },
+    { "keys": ["alt+enter"], "command": "find_all", "args": {"close_panel": true},
+        "context": [{"key": "panel", "operand": "incremental_find"}, {"key": "panel_has_focus"}]
+    },
+    { "keys": ["alt+enter"], "command": "find_all",
+        "context": [{"key": "panel", "operand": "find_in_files"}, {"key": "panel_has_focus"}]
+    },
+    { "keys": ["ctrl+alt+enter"], "command": "replace_all",
+        "context": [{"key": "panel", "operand": "find_in_files"}, {"key": "panel_has_focus"}]
+    },
+    { "keys": ["alt+enter"], "command": "select", "args": { "replace": true }, "context":
+        [
+            { "key": "overlay_has_focus", "operator": "equal", "operand": true },
+            { "key": "overlay_name", "operator": "equal", "operand" : "goto" }
+        ],
+    },
+]
+

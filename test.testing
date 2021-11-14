@@ -1,0 +1,129 @@
+import sublime
+import sublime_plugin
+
+class InsertBelowCommand(sublime_plugin.TextCommand):
+    def move_down(self):
+        self.view.run_command('move', {'by': 'lines', 'forward':True})
+        return self.view.sel()[0]
+
+    @property
+    def region(self):
+        return sublime.Region(0, len(self.view)-1)
+
+    @property
+    def text(self):
+        # raw = map(self.view.substr, range(len(self.view)))
+        # return ''.join(raw)
+        return self.view.substr(self.region)
+    @property
+    def lines(self):
+        yield from enumerate(self.text.splitlines())
+
+
+
+
+    def region_start(self, region):
+        line = self.view.line(region)
+        return region.a - line.a
+
+    def pad_lines(self, region):
+        # raw = tuple(map(self.view.substr, range(len(self.view))))
+        # text = ''.join(raw).splitlines()
+        text = self.text.splitlines()
+        print(text)
+        pad = self.region_start(region)
+        for i, line in enumerate(text):
+            text[i] = line.ljust(pad)
+        self.view.replace(self.edit, self.region, '\n'.join(text))
+
+    def lines_below(self, region):
+        line_index = self.line_number(region)
+        for i, line in self.lines:
+            if i > line_index:
+                yield i, line
+
+    def line_number(self, region):
+        text = self.text.splitlines()
+        print("Number of Lines:\t{}".format(len(text)))
+
+        length = 0
+        line_index = 0
+
+        while length < len(self.view)-1:
+            line = text[line_index]
+            length += len(line)
+            line_length = len(text[line_index])
+            if length >= region.a:
+                return line_index
+            line_index += 1
+
+    def restrip(self):
+        text = '\n'.join(map(str.rstrip, self.text.splitlines()))
+        self.view.replace(self.edit, self.region, text)
+
+    def replace_line(self, index, new_line):
+        text = self.text.splitlines()
+        ctr = 0
+        for i, line in self.lines:
+            ctr += len(line)
+            if index == i:
+                # text[i] = new_line
+                region = sublime.Region(ctr-len(line), ctr)
+                self.view.replace(self.edit, region, new_line)
+                return
+
+
+
+    @staticmethod
+    def flatten_selection(region):
+        return sublime.Region(region.a, region.a)
+
+    def run(self, edit, text):
+        print('\n'*20)
+        print(self.region)
+        self.edit = edit
+        region = self.flatten_selection(self.view.sel()[0])
+        position = self.region_start(region)
+        self.pad_lines(region)
+        for i, line in self.lines_below(region):
+            new_line = line[:position] + text + line[position:]
+            self.replace_line(i, new_line)
+        self.restrip()
+        self.view.insert(edit, region.a, '')
+        self.view.run_command('save', {'encoding': self.view.encoding()})
+
+    def input(self, args):
+        return InsertReceptionHandler(self.view)
+
+
+class InsertReceptionHandler(sublime_plugin.TextInputHandler):
+    def __init__(self, view):
+        self.view = view
+
+    def name(self):
+        return "text"
+
+    def placeholder(self):
+        return "your input"
+
+    def preview(self, text):
+        return ("Characters: {}, Words: {}"
+            .format(
+                len(text), len(text.split())
+            )
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
