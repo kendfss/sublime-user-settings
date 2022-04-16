@@ -3,8 +3,8 @@
     "extends": "Adaptive.sublime-theme",
     "variables": {
         "accent": "#f78166",
-        "background": "var(--background)",
-        "foreground": "#c9d1d9",
+        // "background": "var(--background)",
+        // "foreground": "#c9d1d9",
         "fontSizeSm": 11,
         "fontSizeMd": 12,
         "fontSizeLg": 14,

@@ -1,0 +1,38 @@
+{
+    "working_dir": "$file_path",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.python",
+    "osx" :{
+    "env": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    }
+        
+    },
+    "encoding": "utf8",
+    "variants": [
+        {
+            "name": "fmt (file)",
+            "cmd": [
+                "black",
+                "$file"
+            ]
+        },
+        {
+    "name": "fmt (dir)",
+    "cmd": [
+                "black",
+                "$file_path"
+            ]
+        },
+    
+    {
+        "name": 
+            "run",
+            "cmd": [
+                "python3","-u",
+                "$file"
+            ]
+        }
+    ]
+}
+

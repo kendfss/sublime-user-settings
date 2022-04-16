@@ -1,0 +1,57 @@
+{
+    "working_dir": "$file_path",
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "selector": "source.go",
+    "encoding": "utf8",
+    "osx": {
+        "env": {
+            "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+        }
+    },
+    "variants": [
+        {
+            "name": "fmt (file)",
+            "cmd": [
+                "gofumpt",
+                // "gofmt",
+                "-w",
+                "-e",
+                "$file"
+            ]
+        },
+        {
+            "name": "fmt (dir)",
+            "cmd": [
+                "gofumpt",
+                // "gofmt",
+                "-w",
+                "-e",
+                "$file_path"
+            ]
+        },
+        {
+            "name": "tidy (mod)",
+            "cmd": [
+                "go",
+                "mod",
+                "tidy"
+            ]
+        },
+        {
+            "name": "run (file)",
+            "cmd": [
+                "go",
+                "run",
+                "$file"
+            ]
+        },
+        {
+            "name": "run (dir)",
+            "cmd": [
+                "go",
+                "run",
+                "$file_path"
+            ]
+        }
+    ]
+}

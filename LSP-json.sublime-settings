@@ -1,0 +1,88 @@
+{
+    // Open "Preferences: LSP Utils Settings" from the Command Palette to customize the Node runtime.
+    "command": [
+        // "/usr/local/bin/node",
+        "/usr/local/bin/vscode-json-languageserver",
+        "--stdio"
+    ],
+    "schemes": [
+        // regular files
+        "file",
+        // in-memory buffers
+        "buffer",
+        // sublime resource files that are not strictly on-disk
+        "res",
+        // set by yaml-language-server when a remote schema is opened
+        "json-schema"
+    ],
+    // don't auto-complete in comments and after typing a ",", ":", "{" or "[", and after closing a string
+    "auto_complete_selector": "- comment - punctuation.separator - punctuation.definition.string.end - constant.character.escape - invalid.illegal - punctuation.section.mapping - punctuation.section.sequence",
+    "disabled_capabilities": {
+        // the trigger characters are too blunt, we'll specify auto_complete_selector manually
+        "completionProvider": {
+            "triggerCharacters": true
+        }
+    },
+    "initializationOptions": {
+        "customCapabilities.rangeFormatting.editLimit": 1000,
+        "handledSchemaProtocols": [
+            "https",
+            "http",
+            "file"
+        ],
+        "provideFormatter": true,
+    },
+    "settings": {
+        "json.format.enable": true,
+        "json.resultLimit": 5000,
+        "jsonc.patterns": [
+            "buffer://*",
+            ".babelrc",
+            ".eslintrc",
+            ".eslintrc.json",
+            ".hintrc",
+            ".jsfmtrc",
+            ".jshintrc",
+            ".jsonc",
+            ".swcrc",
+            "/.ember-cli",
+            "/.vscode/*.json",
+            "/babel.config.json",
+        ],
+        "userSchemas": [
+            // {
+            //  "fileMatch": ["tasks/*.yaml"],
+            //  "uri": "http://json.schemastore.org/ansible-stable-2.9"
+            // },
+            // {
+            //  "fileMatch": ["some-file.json"],
+            //  "uri": "file:///Users/me/some-schema.json"
+            // }
+        ],
+    },
+    // ST4
+    "selector": "source.json",
+    // ST3
+    "languages": [
+        {
+            "scopes": [
+                "source.json"
+            ],
+            "syntaxes": [
+                "Packages/JavaScript/JSON.sublime-syntax",
+                "Packages/JSON/JSON.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Build System/Sublime Text Build System.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Color Scheme/Sublime Text Color Scheme.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Commands/Sublime Text Commands.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Completions/Sublime Text Completions.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Keymap/Sublime Text Keymap.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Macro/Sublime Text Macro.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Menu/Sublime Text Menu.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Mousemap/Sublime Text Mousemap.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Project/Sublime Text Project.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Settings/Sublime Text Settings.sublime-syntax",
+                "Packages/PackageDev/Package/Sublime Text Theme/Sublime Text Theme.sublime-syntax",
+            ],
+        }
+    ],
+}
