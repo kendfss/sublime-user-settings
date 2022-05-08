@@ -534,7 +534,7 @@
     // user's customized environment variables. May be a boolean, or a string
     // of the path the shell to invoke. Sublime Text must be restarted for this
     // to take effect.
-    "shell_environment": "zsh",
+    "shell_environment": "/bin/zsh",
     // Whether to reload a file if it has changed on disk.
     "reload_file_on_change": true,
     // Always prompt before reloading a file, even if the file hasn't been

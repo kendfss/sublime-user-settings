@@ -533,11 +533,6 @@
         "command": "lsp_show_diagnostics_panel",
         "keys": [
             "alt+shift+m"
-        ],
-        "context": [
-            {
-                "key": "setting.lsp_active"
-            }
         ]
     }
 ]
