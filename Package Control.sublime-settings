@@ -5,12 +5,16 @@
 	],
 	"installed_packages":
 	[
+		"0x0",
 		"ACTG",
 		"AddRemoveFolder",
 		"AltUp",
+		"ChannelRepositoryTools",
 		"Color Highlight",
 		"Emmet",
 		"FileIcons",
+		"FindKeyConflicts",
+		"GitHub Flavored Markdown Preview",
 		"GoTests",
 		"HTML Boilerplate",
 		"HTML Minifier",

@@ -11,19 +11,65 @@
     "gopls.allowImplicitNetworkAccess": false,
     // (Experimental) allowModfileModifications disables -mod=readonly, allowing imports from
     // out-of-scope modules. This option will eventually be removed.
-    "gopls.allowModfileModifications": false,
+    "gopls.allowModfileModifications": true,
     // analyses specify analyses that the user would like to enable or disable.
     // A map of the names of analysis passes that should be enabled/disabled.
     // A full list of analyzers that gopls uses can be found
     // [here](https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md).
     "gopls.analyses": {
-      "unusedparams": true,
+      "asmdecl": true,
+      "assign": true,
+      "atomic": true,
+      "atomicalign": true,
+      "bools": true,
+      "buildtag": true,
+      "cgocall": true,
+      "composites": true,
+      "copylocks": true,
+      "deepequalerrors": true,
+      "errorsas": true,
+      "fieldalignment": true,
+      "fillreturns": true,
+      "fillstruct": true,
+      "httpresponse": true,
+      "ifaceassert": true,
+      "infertypeargs": true,
+      "loopclosure": true,
+      "lostcancel": true,
+      "nilfunc": true,
       "nilness": true,
-      "unusedparams": true
+      "printf": true,
+      "shadow": false,
+      "shift": true,
+      "simplifycompositelit": true,
+      "simplifyrange": true,
+      "simplifyslice": true,
+      "sortslice": true,
+      "stdmethods": true,
+      "stringintconv": true,
+      "structtag": true,
+      "testinggoroutine": true,
+      "tests": true,
+      "unmarshal": true,
+      "unreachable": true,
+      "unsafeptr": true,
+      "unusedparams": true,
+      "unusedresult": true,
+      "unusedwrite": true,
+      "useany": true,
+      "nonewvars": true,
+      "noresultvalues": true,
+      "undeclaredname": true,
+      "stubmethods": true
     },
     // (Experimental) annotations specifies the various kinds of optimization diagnostics
     // that should be reported by the gc_details command.
-    "gopls.annotations": {},
+    "gopls.annotations": {
+      "bounds": true,
+      "escape": true,
+      "inline": true,
+      "nil": true
+    },
     // buildFlags is the set of flags passed on to the build system when invoked.
     // It is applied to queries like `go list`, which is used when discovering files.
     // The most common use is to set `-tags`.
@@ -33,7 +79,15 @@
     // "Code Lenses" section of the
     // [Settings page](https://github.com/golang/tools/blob/master/gopls/doc/settings.md)
     // for the list of supported lenses.
-    "gopls.codelenses": {},
+    "gopls.codelenses": {
+      "gc_details": true,
+      "generate": true,
+      "regenerate_cgo": true,
+      "test": true,
+      "tidy": true,
+      "upgrade_dependency": true,
+      "vendor": true
+    },
     // (For Debugging) completionBudget is the soft latency goal for completion requests. Most
     // requests finish in a couple milliseconds, but in some cases deep
     // completions can take much longer. As we use up our budget we
@@ -81,12 +135,12 @@
     "gopls.experimentalPostfixCompletions": true,
     // (Experimental) experimentalTemplateSupport opts into the experimental support
     // for template files.
-    "gopls.experimentalTemplateSupport": false,
+    "gopls.experimentalTemplateSupport": true,
     // (Experimental) experimentalWorkspaceModule opts a user into the experimental support
     // for multi-module workspaces.
-    "gopls.experimentalWorkspaceModule": false,
+    "gopls.experimentalWorkspaceModule": true,
     // gofumpt indicates if we should run gofumpt formatting.
-    "gopls.gofumpt": false,
+    "gopls.gofumpt": true,
     // hoverKind controls the information that appears in the hover text.
     // SingleLine and Structured are intended for use only by authors of editor plugins.
     // possible values: FullDocumentation, NoDocumentation, SingleLine, Structured, SynopsisDocumentation
@@ -119,7 +173,7 @@
     "gopls.memoryMode": "Normal",
     // (Experimental) semanticTokens controls whether the LSP server will send
     // semantic tokens to the client.
-    "gopls.semanticTokens": false,
+    "gopls.semanticTokens": true,
     // (Experimental) staticcheck enables additional analyses from staticcheck.io.
     "gopls.staticcheck": false,
     // (Advanced) symbolMatcher sets the algorithm that is used when finding workspace symbols.
@@ -130,7 +184,7 @@
     "gopls.symbolStyle": "Dynamic",
     // placeholders enables placeholders for function parameters or struct
     // fields in completion responses.
-    "gopls.usePlaceholders": false,
+    "gopls.usePlaceholders": true,
     // (For Debugging) verboseOutput enables additional debug logging.
     "gopls.verboseOutput": false
   }

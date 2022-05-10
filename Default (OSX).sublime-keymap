@@ -534,5 +534,59 @@
         "keys": [
             "alt+shift+m"
         ]
+    },
+    {
+        "command": "lsp_code_lens",
+        "keys": [
+            "alt+shift+c"
+        ],
+        "context": [
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "codeLensProvider"
+            }
+        ]
+    },
+    {
+        "command": "lsp_code_actions",
+        // "args": {
+        //     "only_kinds": [
+        //         "source"
+        //     ]
+        // },
+        "keys": [
+            "alt+shift+a"
+        ],
+        "context": [
+            {
+                "key": "lsp.session_with_capability",
+                "operator": "equal",
+                "operand": "codeActionProvider.codeActionKinds"
+            }
+        ]
+    },
+    {
+        "command": "lsp_toggle_server_panel",
+        "keys": [
+            "alt+shift+p"
+        ],
+        "context": [
+            {
+                "key": "setting.lsp_active"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "super+n"
+        ],
+        "command": "new_file_new"
+    },
+    {
+        "keys": [
+            "super+alt+n"
+        ],
+        "command": "new_file"
     }
 ]
