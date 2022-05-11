@@ -27,6 +27,7 @@
 		"LSP-json",
 		"LSP-PowerShellEditorServices",
 		"LSP-pylsp",
+		"LSP-pyright",
 		"LSP-TexLab",
 		"LSP-yaml",
 		"Markdown Extended",
