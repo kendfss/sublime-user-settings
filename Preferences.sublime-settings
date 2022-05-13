@@ -695,6 +695,7 @@
     // List any packages to ignore here. When removing entries from this list,
     // a restart may be required if the package contains plugins.
     "ignored_packages": [
+        "LSP-html",
         "Vintage",
     ],
     "ignore_vcs_packages": true,

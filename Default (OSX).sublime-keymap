@@ -162,27 +162,20 @@
         "keys": [
             "super+,"
         ],
-        "command": "open_file",
+        "command": "edit_settings",
         "args": {
-            "file": "/Users/kendfss/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings"
+            "base_file": "${packages}/Default/Preferences.sublime-settings",
+            "default": "// Settings in here override those in \"Default/Preferences.sublime-settings\",\n// and are overridden in turn by syntax-specific settings.\n{\n\t$0\n}\n"
         }
     },
     {
         "keys": [
             "super+alt+,"
         ],
-        "command": "open_file",
+        "command": "edit_settings",
         "args": {
-            "file": "/Users/kendfss/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap"
-        }
-    },
-    {
-        "keys": [
-            "super+shift+,"
-        ],
-        "command": "open_file",
-        "args": {
-            "file": "/Users/kendfss/Library/Application Support/Sublime Text/Packages/Default/Default (OSX).sublime-keymap"
+            "base_file": "${packages}/Default/Default (OSX).sublime-keymap",
+            "default": "// Settings in here override those in \"Default/Default (OSX).sublime-keymap\",\n// and are overridden in turn by syntax-specific settings.\n{\n\t$0\n}\n"
         }
     },
     {
@@ -581,7 +574,7 @@
         "keys": [
             "super+n"
         ],
-        "command": "new_file_new"
+        "command": "advanced_new_file_new"
     },
     {
         "keys": [
